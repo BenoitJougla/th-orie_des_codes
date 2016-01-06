@@ -1,0 +1,17 @@
+Benoit Jougla
+TP2 - Codage par transformée : Compression par DCT (JPEG)
+
+/*************************************************/
+/*******************JPEGEncoder*******************/
+/*************************************************/
+
+- La fonction DCT permet de calculer la DCT sur l'image
+	-> Elle fait appel à la fonction DctBlock qui va appliquer la DCT sur un bloc 8 * 8
+		-> Les cosinus du calcul de la DCT sont calculés une fois et stockés dans un tableau. Cela permet de réduire le temps des calculs.
+- Une fois la DCT appliqué sur l'image, la fonction Quantization va appliquer une quantification sur l'image ayant reçue une DCT
+
+/*************************************************/
+/*******************JPEGDecoder*******************/
+/*************************************************/
+
+- Déquantification et dct inverse sur l'image
