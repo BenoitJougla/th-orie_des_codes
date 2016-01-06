@@ -1,0 +1,338 @@
+digraph Huffman {
+exyjkwzgvhboulpcritnaqfmds [shape=ellipse,label=99.9];
+exyjkwzgvhboulpcritnaqfmds->exyjkwzgvhboul;
+exyjkwzgvhboul [shape=ellipse,label=39.3];
+exyjkwzgvhboul->e;
+e [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>e</TD>
+		<TD COLSPAN="2">17.69</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">00</TD>
+	</TR>
+</TABLE>>];
+exyjkwzgvhboul->xyjkwzgvhboul;
+xyjkwzgvhboul [shape=ellipse,label=21.61];
+xyjkwzgvhboul->xyjkwzgvhbo;
+xyjkwzgvhbo [shape=ellipse,label=10.39];
+xyjkwzgvhbo->xyjkwzgvhb;
+xyjkwzgvhb [shape=ellipse,label=5.19];
+xyjkwzgvhb->xyjkwzg;
+xyjkwzg [shape=ellipse,label=2.36];
+xyjkwzg->xyjkwz;
+xyjkwz [shape=ellipse,label=1.17];
+xyjkwz->x;
+x [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>x</TD>
+		<TD COLSPAN="2">0.53</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0100000</TD>
+	</TR>
+</TABLE>>];
+xyjkwz->yjkwz;
+yjkwz [shape=ellipse,label=0.64];
+yjkwz->y;
+y [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>y</TD>
+		<TD COLSPAN="2">0.26</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">01000010</TD>
+	</TR>
+</TABLE>>];
+yjkwz->jkwz;
+jkwz [shape=ellipse,label=0.38];
+jkwz->j;
+j [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>j</TD>
+		<TD COLSPAN="2">0.18</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">010000110</TD>
+	</TR>
+</TABLE>>];
+jkwz->kwz;
+kwz [shape=ellipse,label=0.2];
+kwz->kw;
+kw [shape=ellipse,label=0.08];
+kw->k;
+k [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>k</TD>
+		<TD COLSPAN="2">0.02</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">01000011100</TD>
+	</TR>
+</TABLE>>];
+kw->w;
+w [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>w</TD>
+		<TD COLSPAN="2">0.06</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">01000011101</TD>
+	</TR>
+</TABLE>>];
+kwz->z;
+z [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>z</TD>
+		<TD COLSPAN="2">0.12</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0100001111</TD>
+	</TR>
+</TABLE>>];
+xyjkwzg->g;
+g [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>g</TD>
+		<TD COLSPAN="2">1.19</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">010001</TD>
+	</TR>
+</TABLE>>];
+xyjkwzgvhb->vhb;
+vhb [shape=ellipse,label=2.83];
+vhb->v;
+v [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>v</TD>
+		<TD COLSPAN="2">1.28</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">010010</TD>
+	</TR>
+</TABLE>>];
+vhb->hb;
+hb [shape=ellipse,label=1.55];
+hb->h;
+h [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>h</TD>
+		<TD COLSPAN="2">0.74</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0100110</TD>
+	</TR>
+</TABLE>>];
+hb->b;
+b [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>b</TD>
+		<TD COLSPAN="2">0.81</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0100111</TD>
+	</TR>
+</TABLE>>];
+xyjkwzgvhbo->o;
+o [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>o</TD>
+		<TD COLSPAN="2">5.2</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0101</TD>
+	</TR>
+</TABLE>>];
+xyjkwzgvhboul->ul;
+ul [shape=ellipse,label=11.22];
+ul->u;
+u [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>u</TD>
+		<TD COLSPAN="2">5.23</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0110</TD>
+	</TR>
+</TABLE>>];
+ul->l;
+l [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>l</TD>
+		<TD COLSPAN="2">5.99</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0111</TD>
+	</TR>
+</TABLE>>];
+exyjkwzgvhboulpcritnaqfmds->pcritnaqfmds;
+pcritnaqfmds [shape=ellipse,label=60.6];
+pcritnaqfmds->pcrit;
+pcrit [shape=ellipse,label=27.41];
+pcrit->pcr;
+pcr [shape=ellipse,label=12.73];
+pcr->pc;
+pc [shape=ellipse,label=6.3];
+pc->p;
+p [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>p</TD>
+		<TD COLSPAN="2">2.92</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">10000</TD>
+	</TR>
+</TABLE>>];
+pc->c;
+c [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>c</TD>
+		<TD COLSPAN="2">3.38</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">10001</TD>
+	</TR>
+</TABLE>>];
+pcr->r;
+r [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>r</TD>
+		<TD COLSPAN="2">6.43</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1001</TD>
+	</TR>
+</TABLE>>];
+pcrit->it;
+it [shape=ellipse,label=14.68];
+it->i;
+i [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>i</TD>
+		<TD COLSPAN="2">7.24</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1010</TD>
+	</TR>
+</TABLE>>];
+it->t;
+t [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>t</TD>
+		<TD COLSPAN="2">7.44</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1011</TD>
+	</TR>
+</TABLE>>];
+pcritnaqfmds->naqfmds;
+naqfmds [shape=ellipse,label=33.19];
+naqfmds->na;
+na [shape=ellipse,label=15.79];
+na->n;
+n [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>n</TD>
+		<TD COLSPAN="2">7.68</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1100</TD>
+	</TR>
+</TABLE>>];
+na->a;
+a [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>a</TD>
+		<TD COLSPAN="2">8.11</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1101</TD>
+	</TR>
+</TABLE>>];
+naqfmds->qfmds;
+qfmds [shape=ellipse,label=17.4];
+qfmds->qfmd;
+qfmd [shape=ellipse,label=8.53];
+qfmd->qfm;
+qfm [shape=ellipse,label=4.25];
+qfm->qf;
+qf [shape=ellipse,label=1.96];
+qf->q;
+q [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>q</TD>
+		<TD COLSPAN="2">0.83</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1110000</TD>
+	</TR>
+</TABLE>>];
+qf->f;
+f [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>f</TD>
+		<TD COLSPAN="2">1.13</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1110001</TD>
+	</TR>
+</TABLE>>];
+qfm->m;
+m [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>m</TD>
+		<TD COLSPAN="2">2.29</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">111001</TD>
+	</TR>
+</TABLE>>];
+qfmd->d;
+d [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>d</TD>
+		<TD COLSPAN="2">4.28</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">11101</TD>
+	</TR>
+</TABLE>>];
+qfmds->s;
+s [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>s</TD>
+		<TD COLSPAN="2">8.87</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1111</TD>
+	</TR>
+</TABLE>>];
+
+}

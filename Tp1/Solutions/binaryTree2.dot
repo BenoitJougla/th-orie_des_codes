@@ -1,0 +1,299 @@
+digraph Huffman {
+egxjyqpdoilrcfbhvanmuts [shape=ellipse,label=100];
+egxjyqpdoilrcfbhvanmuts->egxjyqpdoi;
+egxjyqpdoi [shape=ellipse,label=40.7143];
+egxjyqpdoi->e;
+e [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>e</TD>
+		<TD COLSPAN="2">18.4066</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">00</TD>
+	</TR>
+</TABLE>>];
+egxjyqpdoi->gxjyqpdoi;
+gxjyqpdoi [shape=ellipse,label=22.3077];
+gxjyqpdoi->gxjyqpd;
+gxjyqpd [shape=ellipse,label=9.83516];
+gxjyqpd->gxjyqp;
+gxjyqp [shape=ellipse,label=4.89011];
+gxjyqp->gxjyq;
+gxjyq [shape=ellipse,label=2.1978];
+gxjyq->g;
+g [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>g</TD>
+		<TD COLSPAN="2">0.989011</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">010000</TD>
+	</TR>
+</TABLE>>];
+gxjyq->xjyq;
+xjyq [shape=ellipse,label=1.20879];
+xjyq->xjy;
+xjy [shape=ellipse,label=0.43956];
+xjy->x;
+x [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>x</TD>
+		<TD COLSPAN="2">0.21978</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">01000100</TD>
+	</TR>
+</TABLE>>];
+xjy->jy;
+jy [shape=ellipse,label=0.21978];
+jy->j;
+j [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>j</TD>
+		<TD COLSPAN="2">0.10989</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">010001010</TD>
+	</TR>
+</TABLE>>];
+jy->y;
+y [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>y</TD>
+		<TD COLSPAN="2">0.10989</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">010001011</TD>
+	</TR>
+</TABLE>>];
+xjyq->q;
+q [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>q</TD>
+		<TD COLSPAN="2">0.769231</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0100011</TD>
+	</TR>
+</TABLE>>];
+gxjyqp->p;
+p [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>p</TD>
+		<TD COLSPAN="2">2.69231</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">01001</TD>
+	</TR>
+</TABLE>>];
+gxjyqpd->d;
+d [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>d</TD>
+		<TD COLSPAN="2">4.94505</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0101</TD>
+	</TR>
+</TABLE>>];
+gxjyqpdoi->oi;
+oi [shape=ellipse,label=12.4725];
+oi->o;
+o [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>o</TD>
+		<TD COLSPAN="2">6.04396</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0110</TD>
+	</TR>
+</TABLE>>];
+oi->i;
+i [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>i</TD>
+		<TD COLSPAN="2">6.42857</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">0111</TD>
+	</TR>
+</TABLE>>];
+egxjyqpdoilrcfbhvanmuts->lrcfbhvanmuts;
+lrcfbhvanmuts [shape=ellipse,label=59.2857];
+lrcfbhvanmuts->lrcfbhva;
+lrcfbhva [shape=ellipse,label=27.3077];
+lrcfbhva->lr;
+lr [shape=ellipse,label=13.1319];
+lr->l;
+l [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>l</TD>
+		<TD COLSPAN="2">6.53846</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1000</TD>
+	</TR>
+</TABLE>>];
+lr->r;
+r [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>r</TD>
+		<TD COLSPAN="2">6.59341</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1001</TD>
+	</TR>
+</TABLE>>];
+lrcfbhva->cfbhva;
+cfbhva [shape=ellipse,label=14.1758];
+cfbhva->cfbhv;
+cfbhv [shape=ellipse,label=6.7033];
+cfbhv->c;
+c [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>c</TD>
+		<TD COLSPAN="2">3.2967</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">10100</TD>
+	</TR>
+</TABLE>>];
+cfbhv->fbhv;
+fbhv [shape=ellipse,label=3.40659];
+fbhv->fb;
+fb [shape=ellipse,label=1.64835];
+fb->f;
+f [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>f</TD>
+		<TD COLSPAN="2">0.824176</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1010100</TD>
+	</TR>
+</TABLE>>];
+fb->b;
+b [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>b</TD>
+		<TD COLSPAN="2">0.824176</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1010101</TD>
+	</TR>
+</TABLE>>];
+fbhv->hv;
+hv [shape=ellipse,label=1.75824];
+hv->h;
+h [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>h</TD>
+		<TD COLSPAN="2">0.879121</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1010110</TD>
+	</TR>
+</TABLE>>];
+hv->v;
+v [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>v</TD>
+		<TD COLSPAN="2">0.879121</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1010111</TD>
+	</TR>
+</TABLE>>];
+cfbhva->a;
+a [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>a</TD>
+		<TD COLSPAN="2">7.47253</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1011</TD>
+	</TR>
+</TABLE>>];
+lrcfbhvanmuts->nmuts;
+nmuts [shape=ellipse,label=31.978];
+nmuts->nmu;
+nmu [shape=ellipse,label=15.3297];
+nmu->n;
+n [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>n</TD>
+		<TD COLSPAN="2">7.63736</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1100</TD>
+	</TR>
+</TABLE>>];
+nmu->mu;
+mu [shape=ellipse,label=7.69231];
+mu->m;
+m [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>m</TD>
+		<TD COLSPAN="2">3.73626</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">11010</TD>
+	</TR>
+</TABLE>>];
+mu->u;
+u [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>u</TD>
+		<TD COLSPAN="2">3.95604</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">11011</TD>
+	</TR>
+</TABLE>>];
+nmuts->ts;
+ts [shape=ellipse,label=16.6484];
+ts->t;
+t [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>t</TD>
+		<TD COLSPAN="2">7.74725</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1110</TD>
+	</TR>
+</TABLE>>];
+ts->s;
+s [shape=none, margin=0, label=<
+<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="3"
+>	<TR>
+		<TD>s</TD>
+		<TD COLSPAN="2">8.9011</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN="3">1111</TD>
+	</TR>
+</TABLE>>];
+
+}
