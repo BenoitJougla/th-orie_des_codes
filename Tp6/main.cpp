@@ -15,50 +15,88 @@ void nextprime(mpz_t rop, const mpz_t op)
 }
 
 /*
- *  algorithme d’Euclide étendu
+ * algorithme d’Euclide étendu
+ * https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide_%C3%A9tendu
  */
-// http://www.cs.princeton.edu/~dsri/modular-inversion-answer.php?n=3&p=11
-// https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/modular-inverses
-// https://www.khanacademy.org/computer-programming/discrete-reciprocal-mod-m/6253215254052864
-void euclide(mpz_t rop, const mpz_t a, const mpz_t b)
+void extended_euclide(mpz_t r, mpz_t u, mpz_t v, const mpz_t a, const mpz_t b)
 {
-	if( mpz_cmp_ui(b, 0) == 0 )
+	mpz_t r2, u2, v2, quotient, rs, us, vs, qr, qu, qv;
+	
+	mpz_init(r2);
+	mpz_init(u2);
+	mpz_init(v2);
+	mpz_init(quotient);
+	mpz_init(rs);
+	mpz_init(us);
+	mpz_init(vs);
+	mpz_init(qr);
+	mpz_init(qu);
+	mpz_init(qv);
+	
+	mpz_set(r, a);
+	mpz_set(r2, b);
+	mpz_set_ui(u, 1);
+	mpz_set_ui(v, 0);
+	mpz_set_ui(u2, 0);
+	mpz_set_ui(v2, 1);
+	
+	while( mpz_cmp_ui(r2, 0) != 0 )
 	{
-		mpz_set(rop, a);
-		return;
+		mpz_fdiv_q(quotient, r, r2);
+		
+		mpz_set(rs, r);
+		mpz_set(us, u);
+		mpz_set(vs, v);
+		
+		mpz_set(r, r2);
+		mpz_set(u, u2);
+		mpz_set(v, v2);
+		
+		mpz_mul(qr, quotient, r2);
+		mpz_mul(qu, quotient, u2);
+		mpz_mul(qv, quotient, v2);
+		
+		mpz_sub(r2, rs, qr);
+		mpz_sub(u2, us, qu);
+		mpz_sub(v2, vs, qv); 
 	}
 	
-	mpz_t r;
-	mpz_init(r);
-	
-	mpz_mod(r, a, b);
-	
-	euclide(rop, b, r);
-	
-	mpz_clear(r);
+	mpz_clear(r2);
+	mpz_clear(u2);
+	mpz_clear(v2);
+	mpz_clear(quotient);
+	mpz_clear(rs);
+	mpz_clear(us);
+	mpz_clear(vs);
+	mpz_clear(qr);
+	mpz_clear(qu);
+	mpz_clear(qv);
 }
 
-int invert(mpz_t rop, const mpz_t a, const mpz_t c)
+int invert(mpz_t rop, const mpz_t a, const mpz_t m)
 {
-	mpz_t b;
-	mpz_init(b);
-	mpz_set_ui
+	mpz_t r, u, v;
 	
-	do {
-		
-	} while( mpz_cmp(
+	mpz_init(r);
+	mpz_init(u);
+	mpz_init(v);
 	
-	euclide(rop, op1, op2);
+	extended_euclide(rop, u, v, a, m);
 	
-	mpz_t abs;
-	mpz_init(abs);
+	mpz_set(rop, u);
 	
-	mpz_abs(abs, op2);
+	int i = 1;
+	while( mpz_cmp_ui(rop, 0) < 0 )
+	{
+		mpz_mul_ui(r, m, i);
+		mpz_add(rop, u, r);
+	}
+
+	mpz_clear(r);
+	mpz_clear(u);
+	mpz_clear(v);
 	
-	if( ( mpz_cmp_ui(rop, 0) > 0 || (mpz_cmp_ui(rop, 0) == 0 && mpz_cmp_ui(abs, 1) == 0) ) && mpz_cmp(rop, abs) < 0 )
-		return 1;
-		
-	return 0;
+	return 1;
 }
 
 /*
@@ -231,7 +269,6 @@ mpz_t* rsa_encrypt(mpz_t msg, mpz_t seed, int primes_size, mpz_t tab_res[3])
     /*
      *  Step 4 : Calculate unique d such that ed = 1(mod x)
      */
-    //if(mpz_invert (d, e, x) == 0)
     if(invert (d, e, x) == 0)
     {
         std::cerr << "T_T invert error" << std::endl;
@@ -341,23 +378,6 @@ void rsa_random_test (int iter)
         std::cout << "Message decrypted : " << d_str << std::endl;
         std::cout << "-------------------------------------------------" << std::endl;
     }
-    
-    std::cout << "Euclide test" << std::endl;
-    
-    mpz_t a, b, r;
-    
-    mpz_init(a);
-    mpz_init(b);
-    mpz_init(r);
-    
-    mpz_set_ui(a, 1071);
-    mpz_set_ui(b, 462);
-    
-    mpz_invert(r, a, b);
-    
-    char c_str[1000];
-    mpz_get_str(c_str, 10, r);
-    std::cout << "euclide " << c_str << std::endl << std::endl;
 }
 
 /* Main subroutine */
