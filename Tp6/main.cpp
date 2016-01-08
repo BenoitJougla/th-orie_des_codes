@@ -8,11 +8,52 @@
 
 /*
  * test de primalité de Rabin-Miller
- */ 
-void nextprime(mpz_t rop, const mpz_t op)
+ * http://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test#C
+ * https://www.topcoder.com/community/data-science/data-science-tutorials/primality-testing-non-deterministic-algorithms/
+ */
+void nextprime(mpz_t rop, const mpz_t op, int k)
 {
-	
+	if( mpz_cmp_ui(n, 2) > 0 ) 
+	{
+		
+	}
 }
+
+bool miller_rabin_test(mpz_t n, int j)
+{
+    if( mpz_cmp_ui(n, 2) < 0 )
+    {
+        return false;
+    }
+    
+    mpz_t mod;
+    mpz_init(mod);
+    mpz_mod_ui(mod, n, 2);
+    
+    if( mpz_cmp_ui(n, 2) != 0 && mpz_cmp_ui(mod, 0) == 0 )
+    {
+		return false;
+	}
+    
+    
+    long long s=p-1;
+    while(s%2==0){
+        s/=2;
+    }
+    for(int i=0;i<iteration;i++){
+        long long a=rand()%(p-1)+1,temp=s;
+        long long mod=modulo(a,temp,p);
+        while(temp!=p-1 && mod!=1 && mod!=p-1){
+            mod=mulmod(mod,mod,p);
+            temp *= 2;
+        }
+        if(mod!=p-1 && temp%2==0){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 /*
  * algorithme d’Euclide étendu
