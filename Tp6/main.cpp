@@ -17,6 +17,9 @@ void nextprime(mpz_t rop, const mpz_t op)
 /*
  *  algorithme d’Euclide étendu
  */
+// http://www.cs.princeton.edu/~dsri/modular-inversion-answer.php?n=3&p=11
+// https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/modular-inverses
+// https://www.khanacademy.org/computer-programming/discrete-reciprocal-mod-m/6253215254052864
 void euclide(mpz_t rop, const mpz_t a, const mpz_t b)
 {
 	if( mpz_cmp_ui(b, 0) == 0 )
@@ -30,22 +33,22 @@ void euclide(mpz_t rop, const mpz_t a, const mpz_t b)
 	
 	mpz_mod(r, a, b);
 	
-	 char c_str[1000];
-    mpz_get_str(c_str,10,r);
-    std::cout << "mod = " << c_str << std::endl << std::endl;
-	
 	euclide(rop, b, r);
 	
 	mpz_clear(r);
 }
 
-int invert(mpz_t rop, const mpz_t op1, const mpz_t op2)
+int invert(mpz_t rop, const mpz_t a, const mpz_t c)
 {
-	euclide(rop, op1, op2);
+	mpz_t b;
+	mpz_init(b);
+	mpz_set_ui
 	
-	 char c_str[1000];
-    mpz_get_str(c_str,10,rop);
-    std::cout << "rop = " << c_str << std::endl << std::endl;
+	do {
+		
+	} while( mpz_cmp(
+	
+	euclide(rop, op1, op2);
 	
 	mpz_t abs;
 	mpz_init(abs);
@@ -338,6 +341,23 @@ void rsa_random_test (int iter)
         std::cout << "Message decrypted : " << d_str << std::endl;
         std::cout << "-------------------------------------------------" << std::endl;
     }
+    
+    std::cout << "Euclide test" << std::endl;
+    
+    mpz_t a, b, r;
+    
+    mpz_init(a);
+    mpz_init(b);
+    mpz_init(r);
+    
+    mpz_set_ui(a, 1071);
+    mpz_set_ui(b, 462);
+    
+    mpz_invert(r, a, b);
+    
+    char c_str[1000];
+    mpz_get_str(c_str, 10, r);
+    std::cout << "euclide " << c_str << std::endl << std::endl;
 }
 
 /* Main subroutine */
