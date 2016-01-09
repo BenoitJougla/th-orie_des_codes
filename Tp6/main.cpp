@@ -6,54 +6,175 @@
 #include <iostream>
 #include <gmp.h>
 
+
+/*
+ * exponentiation rapide 
+ */
+void powm(mpz_t msg, mpz_t base, mpz_t exp, mpz_t mod)
+{
+	int result =  mpz_cmp_ui(exp, 0);
+	
+	mpz_t g, k, y;
+	
+	mpz_init(y);
+	mpz_init(g);
+	mpz_init(k);
+	
+	mpz_set_ui(y, 1);
+	mpz_set(g, base);
+
+	// exp < 0
+	if( result < 0 ) 
+	{		
+		// base = 1 / base
+		mpz_fdiv_q(g, y, base);
+		mpz_mul_ui(k, k, -1);
+	}
+	// exp = 0
+	else if( result == 0 )
+	{
+		mpz_set_ui(msg, 1);
+		
+		mpz_clear(y);
+		mpz_clear(g);
+		mpz_clear(k);
+		
+		return;
+	}
+	
+	mpz_set(k, exp);
+	
+	// tant que exp > 1
+	while( mpz_cmp_ui(k, 1) > 0 )
+	{ 		
+		if( mpz_even_p(k) != 0 )
+		{			
+			mpz_mul(g, g, g);
+			mpz_mod(g, g, mod);
+			
+			mpz_fdiv_q_ui(k, k, 2);
+		}
+		else
+		{
+			mpz_mul(y, g, y);
+			mpz_mul(g, g, g);
+			
+			mpz_sub_ui(k, k, 1);
+			mpz_fdiv_q_ui(k, k, 2);
+		}
+	}
+	
+	mpz_mul(msg, g, y);
+	mpz_mod(msg, msg, mod);
+	
+	mpz_clear(g);
+	mpz_clear(k);
+	mpz_clear(y);
+}
+
 /*
  * test de primalité de Rabin-Miller
  * http://rosettacode.org/wiki/Miller%E2%80%93Rabin_primality_test#C
  * https://www.topcoder.com/community/data-science/data-science-tutorials/primality-testing-non-deterministic-algorithms/
  */
-void nextprime(mpz_t rop, const mpz_t op, int k)
+bool miller_rabin_test(mpz_t n, int iteration, int primes_size)
 {
-	if( mpz_cmp_ui(n, 2) > 0 ) 
-	{
-		
-	}
-}
-
-bool miller_rabin_test(mpz_t n, int j)
-{
+	bool result = true;
+	
     if( mpz_cmp_ui(n, 2) < 0 )
     {
-        return false;
+		result = false;
     }
     
-    mpz_t mod;
-    mpz_init(mod);
-    mpz_mod_ui(mod, n, 2);
-    
-    if( mpz_cmp_ui(n, 2) != 0 && mpz_cmp_ui(mod, 0) == 0 )
+    if( result != false )
     {
-		return false;
+		mpz_t mod;
+		mpz_init(mod);
+		mpz_mod_ui(mod, n, 2);
+		
+		if( mpz_cmp_ui(n, 2) != 0 && mpz_cmp_ui(mod, 0) == 0 )
+		{
+			result = false;
+		}
+		else
+		{
+			mpz_t s, a, seed, p, temp, modTest;
+			
+			mpz_init(s);
+			mpz_init(a);
+			mpz_init(seed);
+			mpz_init(p);
+			mpz_init(temp);
+			mpz_init(modTest);
+			
+			mpz_sub_ui(s, n, 1);
+			mpz_mod_ui(mod, s, 2);
+			
+			while( mpz_cmp_ui(mod, 0) == 0 )
+			{
+				mpz_fdiv_q_ui(s, s, 2);
+				mpz_mod_ui(mod, s, 2);
+			}
+			
+			unsigned long int ui_seed = time(NULL);
+			
+			mpz_init_set_ui(seed, ui_seed);
+			
+			gmp_randstate_t rand;
+			gmp_randinit_mt(rand);
+			gmp_randseed(rand, seed);
+			
+			// n - 1
+			mpz_sub_ui(p, n, 1);			
+			
+			for(int i = 0; i < iteration; ++i)
+			{		
+				//  a=rand()%(p-1)+1
+				mpz_urandomb(a, rand, primes_size);
+				mpz_mod(a, a, p);
+				mpz_add_ui(a, a, 1);
+				
+				mpz_set(temp, s);
+				
+				powm(mod, a, temp, n);
+				
+				while( mpz_cmp(temp, p) != 0 && mpz_cmp_ui(mod, 1) != 0 && mpz_cmp(mod, p) !=0 )
+				{
+					mpz_mul(mod, mod, mod);
+					mpz_mod(mod, mod, n);
+				
+					mpz_mul_ui(temp, temp, 2);
+				}
+				
+				mpz_mod_ui(modTest, temp, 2);
+				
+				if( mpz_cmp(mod, p) != 0 && mpz_cmp_ui(modTest, 0) == 0 )
+				{
+					result = false;
+					break;
+				}
+			}
+			
+			mpz_clear(s);
+			mpz_clear(a);
+			mpz_clear(seed);
+			mpz_clear(p);
+			mpz_clear(temp);
+			mpz_clear(modTest);
+		}
 	}
-    
-    
-    long long s=p-1;
-    while(s%2==0){
-        s/=2;
-    }
-    for(int i=0;i<iteration;i++){
-        long long a=rand()%(p-1)+1,temp=s;
-        long long mod=modulo(a,temp,p);
-        while(temp!=p-1 && mod!=1 && mod!=p-1){
-            mod=mulmod(mod,mod,p);
-            temp *= 2;
-        }
-        if(mod!=p-1 && temp%2==0){
-            return false;
-        }
-    }
-    return true;
+	
+	return result;
 }
 
+void nextprime(mpz_t rop, const mpz_t op, int primes_size)
+{
+	do
+	{
+		mpz_add_ui(rop, op, 1);
+		
+	} while( ! miller_rabin_test(rop, 10, primes_size) );
+}
 
 /*
  * algorithme d’Euclide étendu
@@ -140,71 +261,6 @@ int invert(mpz_t rop, const mpz_t a, const mpz_t m)
 	return 1;
 }
 
-/*
- * exponentiation rapide 
- */
-void powm(mpz_t msg, mpz_t base, mpz_t exp, mpz_t mod)
-{
-	int result =  mpz_cmp_ui(exp, 0);
-	
-	mpz_t g, k, y;
-	
-	mpz_init(y);
-	mpz_init(g);
-	mpz_init(k);
-	
-	mpz_set_ui(y, 1);
-	mpz_set(g, base);
-
-	// exp < 0
-	if( result < 0 ) 
-	{		
-		// base = 1 / base
-		mpz_fdiv_q(g, y, base);
-		mpz_mul_ui(k, k, -1);
-	}
-	// exp = 0
-	else if( result == 0 )
-	{
-		mpz_set_ui(msg, 1);
-		
-		mpz_clear(y);
-		mpz_clear(g);
-		mpz_clear(k);
-		
-		return;
-	}
-	
-	mpz_set(k, exp);
-	
-	// tant que exp > 1
-	while( mpz_cmp_ui(k, 1) > 0 )
-	{ 		
-		if( mpz_even_p(k) != 0 )
-		{			
-			mpz_mul(g, g, g);
-			mpz_mod(g, g, mod);
-			
-			mpz_fdiv_q_ui(k, k, 2);
-		}
-		else
-		{
-			mpz_mul(y, g, y);
-			mpz_mul(g, g, g);
-			
-			mpz_sub_ui(k, k, 1);
-			mpz_fdiv_q_ui(k, k, 2);
-		}
-	}
-	
-	mpz_mul(msg, g, y);
-	mpz_mod(msg, msg, mod);
-	
-	mpz_clear(g);
-	mpz_clear(k);
-	mpz_clear(y);
-}
-
 /*function which make the rsa encryption
  * This function creates the keys.
  *
@@ -246,8 +302,8 @@ mpz_t* rsa_encrypt(mpz_t msg, mpz_t seed, int primes_size, mpz_t tab_res[3])
     mpz_urandomb(q, rand, primes_size);
     
     // get the next prime number
-    mpz_nextprime(p, p);
-    mpz_nextprime(q, q);
+    nextprime(p, p, primes_size);
+    nextprime(q, q, primes_size);
 
     char p_str[1000];
     char q_str[1000];
@@ -425,6 +481,6 @@ void rsa_random_test (int iter)
 int main()
 {
     rsa_random_test (5);
-
+    
     return 0;
 }
